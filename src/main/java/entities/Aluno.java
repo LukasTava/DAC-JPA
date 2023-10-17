@@ -9,8 +9,6 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String matricula;
     private String nome;
-    // Outros atributos
-
     @ManyToOne
     private Empresa empresa;
 

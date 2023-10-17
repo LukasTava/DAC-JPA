@@ -16,7 +16,6 @@ public class Estagio {
     private Date dataFim;
     private int cargaHoraria;
     private String status; // em andamento ou finalizado
-    // Outros atributos
 
     @ManyToOne
     private Aluno aluno;
@@ -24,7 +23,6 @@ public class Estagio {
     @ManyToOne
     private Orientador orientador;
 
-    // Getters e setters
     public Long getId() {
         return id;
     }

@@ -13,7 +13,6 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    // Outros atributos
 
     @OneToMany(mappedBy = "empresa")
     private List<Aluno> alunos;
