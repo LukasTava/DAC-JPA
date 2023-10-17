@@ -15,7 +15,7 @@ public class Orientador {
     private String nome;
 
     @OneToMany(mappedBy = "orientador")
-    private List<Estagio> estagios;
+    private List<Aluno> alunos;
 
     public Long getId() {
         return id;
@@ -33,4 +33,12 @@ public class Orientador {
         this.nome = nome;
     }
 
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
+    }
 }
+

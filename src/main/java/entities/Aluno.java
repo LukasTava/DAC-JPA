@@ -1,31 +1,21 @@
 package entities;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.List;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
 
 @Entity
 public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String matricula;
     private String nome;
+    // Outros atributos
+
+    @ManyToOne
+    private Empresa empresa;
 
     @OneToMany(mappedBy = "aluno")
     private List<Estagio> estagios;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getMatricula() {
         return matricula;
@@ -43,5 +33,19 @@ public class Aluno {
         this.nome = nome;
     }
 
-    // Outros getters e setters relevantes
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public List<Estagio> getEstagios() {
+        return estagios;
+    }
+
+    public void setEstagios(List<Estagio> estagios) {
+        this.estagios = estagios;
+    }
 }

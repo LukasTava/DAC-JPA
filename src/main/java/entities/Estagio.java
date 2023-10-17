@@ -1,14 +1,11 @@
 package entities;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
 @Entity
 public class Estagio {
@@ -18,16 +15,14 @@ public class Estagio {
     private Date dataInicio;
     private Date dataFim;
     private int cargaHoraria;
-    private String status; // Pode ser um enum, por exemplo
+    private String status; // em andamento ou finalizado
+    // Outros atributos
 
     @ManyToOne
     private Aluno aluno;
 
     @ManyToOne
     private Orientador orientador;
-
-    @ManyToOne
-    private Empresa empresa;
 
     // Getters e setters
     public Long getId() {
@@ -70,6 +65,21 @@ public class Estagio {
         this.status = status;
     }
 
-    // Outros getters e setters relevantes
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Orientador getOrientador() {
+        return orientador;
+    }
+
+    public void setOrientador(Orientador orientador) {
+        this.orientador = orientador;
+    }
 }
+
 

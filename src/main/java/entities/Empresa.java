@@ -13,9 +13,10 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    // Outros atributos
 
     @OneToMany(mappedBy = "empresa")
-    private List<Estagio> estagios;
+    private List<Aluno> alunos;
 
     public Long getId() {
         return id;
@@ -33,4 +34,11 @@ public class Empresa {
         this.nome = nome;
     }
 
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
+    }
 }
