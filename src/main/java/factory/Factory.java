@@ -142,6 +142,9 @@ public class Factory {
         em.getTransaction().commit();
     }
 
+    public void fechar() {
+        em.close();
+    }
     public static void main(String[] args) {
         Aluno aluno = new Aluno();
         aluno.setMatricula("1L");
@@ -158,10 +161,6 @@ public class Factory {
         aluno.setEstagios(estagios);
     }
 
-
-    public void fechar() {
-        em.close();
-    }
 
 }
 
